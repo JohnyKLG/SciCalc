@@ -2,11 +2,11 @@ function setMem(){
     localStorage.setItem('shift', 'off');
     localStorage.setItem('alpha', 'off')
 }
+fb = document.getElementsByTagName("fnct")[0].getElementsByTagName("button");
+cb = document.getElementsByTagName("cnsl")[0].getElementsByTagName("button");
 function hold(){
     var x = document.getElementById("hold").style;
     var l = document.getElementById("light").style;
-    var fb = document.getElementsByTagName("fnct")[0].getElementsByTagName("button");
-    var cb = document.getElementsByTagName("cnsl")[0].getElementsByTagName("button");
     if(x.left == '-1px'){
         x.left='auto';
         x.right='-1px';
@@ -37,8 +37,6 @@ function hold(){
 }
 function light(){
     var x = document.getElementById("light").style;
-    var fb = document.getElementsByTagName("fnct")[0].getElementsByTagName("button");
-    var cb = document.getElementsByTagName("cnsl")[0].getElementsByTagName("button");
     if(x.left == '-1px'){
         bfb = fb[0].style.borderColor;
         cfb = fb[0].style.color;
