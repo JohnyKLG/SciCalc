@@ -133,25 +133,27 @@ function calc(b){
         }
     }
 }
+shfitBC = document.getElementsByClassName("shift")[0].style.borderColor;
+alphaBC = document.getElementsByClassName("alpha")[0].style.borderColor;
 function shift(){
     if(localStorage.getItem('shift') == 'off'){
         localStorage.setItem('shift', 'on');
-        document.getElementsByClassName("shift")[0].style.borderColor = "rgb(134, 124, 27)";
+        shfitBC = "rgb(134, 124, 27)";
         localStorage.setItem('alpha', 'off');
-        document.getElementsByClassName("alpha")[0].style.borderColor = "#555";
+        alphaBC = "#555";
     }else{
         localStorage.setItem('shift', 'off');
-        document.getElementsByClassName("shift")[0].style.borderColor = "#555";
+        shfitBC = "#555";
     }
 }
 function alpha(){
     if(localStorage.getItem('alpha') == 'off'){
         localStorage.setItem('alpha', 'on');
-        document.getElementsByClassName("alpha")[0].style.borderColor = "rgb(182, 33, 137)";        
+        alphaBC = "rgb(182, 33, 137)";        
         localStorage.setItem('shift', 'off');
-        document.getElementsByClassName("shift")[0].style.borderColor = "#555";
+        shfitBC = "#555";
     }else{
         localStorage.setItem('alpha', 'off');
-        document.getElementsByClassName("alpha")[0].style.borderColor = "#555";
+        alphaBC = "#555";
     }
 }
