@@ -2,11 +2,11 @@ function setMem(){
     localStorage.setItem('shift', 'off');
     localStorage.setItem('alpha', 'off')
 }
-fb = document.getElementsByTagName("fnct")[0].getElementsByTagName("button");
-cb = document.getElementsByTagName("cnsl")[0].getElementsByTagName("button");
 function hold(){
     var x = document.getElementById("hold").style;
     var l = document.getElementById("light").style;
+    var fb = document.getElementsByTagName("fnct")[0].getElementsByTagName("button");
+    var cb = document.getElementsByTagName("cnsl")[0].getElementsByTagName("button");
     if(x.left == '-1px'){
         x.left='auto';
         x.right='-1px';
@@ -37,6 +37,8 @@ function hold(){
 }
 function light(){
     var x = document.getElementById("light").style;
+    var fb = document.getElementsByTagName("fnct")[0].getElementsByTagName("button");
+    var cb = document.getElementsByTagName("cnsl")[0].getElementsByTagName("button");
     if(x.left == '-1px'){
         bfb = fb[0].style.borderColor;
         cfb = fb[0].style.color;
@@ -63,30 +65,6 @@ function light(){
             cb[i].style.borderColor=bcb;
             cb[i].style.color=ccb;
         }
-    }
-}
-shfitBC = document.getElementsByClassName("shift")[0].style.borderColor;
-alphaBC = document.getElementsByClassName("alpha")[0].style.borderColor;
-function shift(){
-    if(localStorage.getItem('shift') == 'off'){
-        localStorage.setItem('shift', 'on');
-        shfitBC = "rgb(134, 124, 27)";
-        localStorage.setItem('alpha', 'off');
-        alphaBC = "#555";
-    }else{
-        localStorage.setItem('shift', 'off');
-        shfitBC = "#555";
-    }
-}
-function alpha(){
-    if(localStorage.getItem('alpha') == 'off'){
-        localStorage.setItem('alpha', 'on');
-        alphaBC = "rgb(182, 33, 137)";        
-        localStorage.setItem('shift', 'off');
-        shfitBC = "#555";
-    }else{
-        localStorage.setItem('alpha', 'off');
-        alphaBC = "#555";
     }
 }
 var sto,mshift;
@@ -153,5 +131,27 @@ function calc(b){
                 }
             }
         }
+    }
+}
+function shift(){
+    if(localStorage.getItem('shift') == 'off'){
+        localStorage.setItem('shift', 'on');
+        document.getElementsByClassName("shift")[0].style.borderColor = "rgb(134, 124, 27)";
+        localStorage.setItem('alpha', 'off');
+        document.getElementsByClassName("alpha")[0].style.borderColor = "#555";
+    }else{
+        localStorage.setItem('shift', 'off');
+        document.getElementsByClassName("shift")[0].style.borderColor = "#555";
+    }
+}
+function alpha(){
+    if(localStorage.getItem('alpha') == 'off'){
+        localStorage.setItem('alpha', 'on');
+        document.getElementsByClassName("alpha")[0].style.borderColor = "rgb(182, 33, 137)";        
+        localStorage.setItem('shift', 'off');
+        document.getElementsByClassName("shift")[0].style.borderColor = "#555";
+    }else{
+        localStorage.setItem('alpha', 'off');
+        document.getElementsByClassName("alpha")[0].style.borderColor = "#555";
     }
 }
